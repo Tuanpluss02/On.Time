@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo/views/home_page.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -10,6 +11,8 @@ class WelcomeScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
             colors: [
               Color(0xFF2E2A2C),
               Color(0xFF2B125A),
@@ -33,7 +36,13 @@ class WelcomeScreen extends StatelessWidget {
                   color: const Color.fromARGB(255, 255, 255, 255),
                 ),
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()),
+                          (route) => false);
+                    },
                     child: Text('START',
                         style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.bold,
