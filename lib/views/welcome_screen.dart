@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todo/views/home_page.dart';
+import 'package:todo/views/sign_in.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -24,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('images/logo.png'),
+              Image.asset('assets/images/logo.png'),
               Text('Make yourself\nmore on time',
                   style:
                       GoogleFonts.openSans(fontSize: 36, color: Colors.white)),
@@ -37,11 +37,11 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 child: TextButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomePage()),
-                          (route) => false);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignInPage()),
+                      );
                     },
                     child: Text('START',
                         style: GoogleFonts.montserrat(

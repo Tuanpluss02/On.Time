@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo/theme.dart';
+import 'package:todo/utils/validator.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -18,7 +19,7 @@ class _SignInPageState extends State<SignInPage> {
           decoration: const BoxDecoration(gradient: AppTheme.primaryGradient),
           child: Center(
             child: Container(
-              height: 450,
+              height: 400,
               width: 320,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
@@ -29,7 +30,7 @@ class _SignInPageState extends State<SignInPage> {
                 child: Form(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
                           "Sign In",
@@ -62,6 +63,10 @@ class _SignInPageState extends State<SignInPage> {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your email';
                             }
+                            // TODO: Uncomment this code to validate email
+                            if (Validator().isValidEmail(value) == false) {
+                              return 'Please enter a valid email';
+                            }
                             return null;
                           },
                           onSaved: (newValue) {},
@@ -86,6 +91,11 @@ class _SignInPageState extends State<SignInPage> {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
                             }
+                            // TODO: Uncomment this code to validate password
+                            // if(Validator().isValidPassword(value) == false)
+                            // {
+                            //   return 'Password must be at least 8 characters, contain at least one uppercase letter, one lowercase letter and one number';
+                            // }
                             return null;
                           },
                           onSaved: (newValue) {},
@@ -99,18 +109,39 @@ class _SignInPageState extends State<SignInPage> {
                             color: AppTheme.primaryColor,
                           ),
                           child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const SignInPage()),
-                                );
-                              },
+                              onPressed: () {},
                               child: Text('SIGN IN',
                                   style: GoogleFonts.montserrat(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 24,
                                       color: Colors.white))),
+                        ),
+                        const SizedBox(height: 20),
+                        Row(
+                          children: const [
+                            Expanded(
+                              child: Divider(),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "OR",
+                                style: TextStyle(
+                                  color: Colors.black26,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                            Expanded(child: Divider()),
+                          ],
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Don't have account? Sign up now",
+                            style: AppTheme.bodyFontStyle.copyWith(
+                                fontSize: 16, color: AppTheme.primaryColor),
+                          ),
                         )
                       ]),
                 ),

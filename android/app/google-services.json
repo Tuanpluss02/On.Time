@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "612712019940",
+    "project_id": "on-time-a81ae",
+    "storage_bucket": "on-time-a81ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612712019940:android:ca0c22a4c727ab43ceb9f1",
+        "android_client_info": {
+          "package_name": "com.stormx.todo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612712019940-ettr7i4ee47vktddqfc8550etoj4odp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv-ZETN4vVY8K4jat2tHB1uEjDV-7O5V4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612712019940-ettr7i4ee47vktddqfc8550etoj4odp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
